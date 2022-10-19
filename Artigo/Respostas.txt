@@ -1,0 +1,116 @@
+Carolina Morais Nigri - 761400
+
+3.) Segundo os textos recomendados, definir e caracterizar
+    * ASIC:
+        - Application Specific Integrated Circuit
+        - Tecnologia utilizada para projetar circuitos digitais integrados (projetos customizados)
+        - Processo de fabricação especial (máscaras específicas para o projeto)
+        - Altos custos e longo tempo de desenvolvimento
+
+    * ASSP: 
+        - Application Specific Standard Parts
+        - Circuitos integrados para uma aplicação específica padrão
+        - Muito similares aos ASICs em projeto e implementação, porém o ASSP é um dispositivo de 
+        propósito mais geral
+
+    * SPLD: 
+        - Simple Programmable Logic Device
+        - Tecnologia utilizada para projetar circuitos digitais integrados (projetos semicustomizados 
+        do tipo PLDs)
+        - Sendo um PLD, tem como características a capacidade de configuração pós-fabricação (fácil 
+        modificação), custos de desenvolvimento e tempo de projeto baixos
+        - Pequenos PLDs (como PALs, PLAs e similares)
+        - Características mais importantes: baixo custo e alto desempenho
+
+    * CPLD:
+        - Complex Programmable Logic Device (Dispositivo de Lógica Programável Complexa) 
+        - Utiliza ferramentas EDA (Eletronic Design Automation) para desenvolvimento: 
+        simplifica e acelera o projeto; não é preciso planejar todas as portas lógicas e suas 
+        conexões; linguagens de descrição de hardware (HDLs - Hardware Description Languages) 
+        auxiliam na elaboração de projetos, assim como ferramentas de síntese lógica automática
+        - É caracterizado por alta durabilidade, alta versatilidade (re-configuração), velocidade 
+        de resposta e facilidade de programação
+        - Mesma eficiência de controladores do mercado
+        - Baixo custo
+        - Aumenta o custo x benefício em relação ao CLP (Controlador Lógico Programável) aplicados 
+        à automação industrial de pequeno e médio porte
+        - Tecnologia utilizada para projetar circuitos digitais integrados (projetos semicustomizados 
+        do tipo PLDs)
+        - Sendo um PLD, tem como características a capacidade de configuração pós-fabricação (fácil 
+        modificação), custos de desenvolvimento e tempo de projeto baixos
+        - Surge da necessidade de produzir dispositivos com maior capacidade que os SPLDs
+        - Integra múltiplos SPLDs em um único chip, promovendo interconexão programável entre os 
+        blocos SPLDs
+        - Atualmente, CPLDs do mercado provêm uma capacidade lógica de até 50 dispositivos SPLDs
+        - Difícil extender essa arquitetura para maior densidade
+    
+    * SOC: 
+        - System On Chip
+        - Dispositivo com mais de cem mil portas lógicas que possua pelo menos um núcleo programável e
+        uma memória no chip
+        - Incorporam processadores de sinais, codificadores, filtros ativos, protocolos e amplificadores
+        operacionais, que normalmente se encontram separados em placas convencionais
+        - Vantagens: aumento da velocidade do sistema e redução da potência consumida, do tamanho e
+        do uso de trilhas nas placas de circuito
+        - Se um ASIC ou um ASSP possui um ou mais processadores, então ele é um SoC
+    
+    * FPGA: 
+        - Field Programmable Gate Array
+        - Tecnologia utilizada para projetar circuitos digitais integrados (projetos semicustomizados 
+        do tipo PLDs)
+        - Sendo um PLD, tem como características a capacidade de configuração pós-fabricação (fácil 
+        modificação), custos de desenvolvimento e tempo de projeto baixos
+        - Arranjo de células configuráveis (blocos lógicos) em um único chip, cada uma contendo certa
+        capacidade para implementação de funções lógicas ou realização de roteamento para comunicação 
+        entre células (podem ocorrer simultaneamente)
+        - Reduz tempo de projeto e tem relativo baixo custo 
+        - Não possuem planos de portas AND ou OR (diferentemente dos CPLDs)
+        - Composto por: blocos lógicos (arranjo bidimensional), blocos de entrada/saída e chaves de 
+        interconexão 
+        - As chaves de interconexão são canais de roteamento horizontal e vertical entre as linhas e 
+        colunas dos blocos lógicos, que possuem chaves programáveis e permitem conectar os blocos de
+        acordo com a necessidade do projeto
+        - Principais aspectos que definem a arquitetura de um FPGA: tipo de tecnologia de programação,
+        arquitetura das células e estrutura de roteamento
+        - Custo mais elevado e capacidade maior que um CPLD 
+
+4.) Diferenciar (sugestão: montar uma tabela)
+    * PROM:
+        - Programmable Read-Only Memory
+        - Primeiro tipo de chip programável pelo usuário, que podia implementar circuitos lógicos
+        - Entradas: linhas de endereço
+        - Saídas: linhas de dados
+        - Contém um decodificador completo para as entradas, o que a torna ineficiente para realização
+        de circuitos lógicos, visto que funções lógicas geralmente não precisam de muitos termos 
+  
+    * PLA:
+        - Programmable Logic Arrays
+        - Inspirados pelas PROMs
+        - Primeiros dispositivos específicos para implementação de circuitos lógicos
+        - Dois níveis: plano de portas wired-AND e plano de portas wired-OR
+        - Cada saída do plano AND pode corresponder a qualquer termo produto das entradas e cada saída 
+        do plano OR pode ser configurada para produzir a soma lógica de quaisquer saídas do plano AND
+        - Vantagem: implementação de funções lógicas pela soma de produtos (SoP), muitas entradas
+        - Desvantagem: dois níveis de lógica programável, gera alto custo e atrasos de propagração 
+  
+    * PAL:
+        - Programmable Array Logic 
+        - Melhorar a PLA
+        - Único nível programável: plano de portas AND programáveis que alimenta um plano OR fixo
+        - Custos mais baixos, melhor desempenho
+        - Geralmente contém flip-flops conectados às saídas OR (permitir implementação de circuitos 
+        sequenciais)
+        - Base para novas arquiteturas, impacto no projeto de hardware digital
+
+    Tipos | Entradas | Saídas 
+    --------------------------------------
+     PROM | linhas de endereço | linhas de dados
+     PLA  | 
+     PAL  | 
+ 
+5.) Diferenciar (sugestão: montar uma tabela)
+   
+    Tipos | 
+    --------------------------------------
+     CPLD | 
+     FPGA | 
