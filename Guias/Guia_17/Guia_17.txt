@@ -1,0 +1,60 @@
+Carolina Morais Nigri - 761400
+
+  t t t  t+1 t+1  FF FF  FF   FF   FF   FF  FF FF
+m a b c   a   b   Da Db SaRa SbRb JaKa JbKb Ta Tb
+0 0 0 0   0   0   0  0   00   00   00   00  0  0   // hold(a)  hold(b)
+1 0 0 1   0   1   0  1   00   10   00   11  0  1   // hold(a)  set(b)
+2 0 1 0   0   1   0  1   00   00   00   00  0  0   // hold(a)  hold(b)
+3 0 1 1   1   1   1  1   10   00   11   00  1  0   //  set(a)  hold(b)
+4 1 0 0   1   0   1  0   00   00   00   00  0  0   // hold(a)  hold(b)
+5 1 0 1   0   0   0  0   01   00   11   00  1  0   // reset(a) hold(b)
+6 1 1 0   1   1   1  1   00   00   00   00  0  0   // hold(a)  hold(b)
+7 1 1 1   1   0   1  0   00   01   00   11  0  1   // hold(a)  reset(b)
+
+1)
+    ab\c 0 1
+    00   
+    01     1
+    11   1 1
+    10   1  
+  
+    Da = SoP(3,4,6,7)
+    Da = b.c + a.c'
+    
+    ab\c 0 1
+    00     1 
+    01   1 1 
+    11   1
+    10     
+
+    Db = SoP(1,2,3,6)
+    Db = a'.c + b.c'
+
+2)
+    Ja = SoP(3) = a'.b.c
+    Ka = SoP(5) = a.b'.c
+
+    Jb = SoP(1) = a'.b'.c
+    Kb = SoP(7) = a.b.c
+
+3)
+    Ja = Ka = SoP(3,5) = a'.b.c + a.b'.c = c.(a'.b + a.b') 
+        = c.(a^b)
+    
+    Jb = Kb = SoP(1,7) = a'.b'.c + a.b.c 
+
+4)
+    Contador assíncrono:
+    T1=T2=T3=1
+    T1_clk=clk 
+    T2_clk=Q1
+    T3_clk=Q2
+    s = {Q3,Q2,Q1}
+
+5)
+    Contador assíncrono:
+    T1=T2=T3=1
+    T1_clk=clk 
+    T2_clk=Q1not
+    T3_clk=Q2not
+    s = {Q3,Q2,Q1}
