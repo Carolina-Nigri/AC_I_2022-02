@@ -1,0 +1,30 @@
+; Carolina Morais Nigri - 761400
+; 6 primeiros numeros de Fibonacci:
+; 0, 1, 1, 2, 3, 5
+
+Main: 
+	load 0 ; acc<-0
+	jump Loop ; jump to Loop
+Loop:
+    load  a    ; acc<-a
+    add   b    ; acc<-acc+b
+    store c    ; c<-acc
+
+    load  a    ; acc<-a
+    store b    ; b<-acc
+    load  c    ; acc<-c
+    store a    ; a<-acc
+
+    load i     ; acc<-i
+    subtract 1 ; acc<-acc-1
+    jmpn Done ; jump to Done if acc < 0
+Done:
+    stop       ; stop
+a: 
+	.data 4 0  ; 4-byte location for operand a
+b:  
+	.data 4 1  ; 4-byte location for operand b
+c: 
+	.data 4 0  ; 4-byte location for operand c
+i: 
+	.data 4 3  ; 4-byte location for counter

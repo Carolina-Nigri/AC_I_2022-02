@@ -1,0 +1,24 @@
+; Carolina Morais Nigri - 761400
+; NOR usando NAND
+
+Main: 
+	load zero ; acc<-0
+	NAND one  ; acc<-~(acc&mdr)
+	write     ; output<-acc
+	load one  ; acc<-1
+	NAND two  ; acc<-~(acc&mdr)
+	write     ; output<-acc
+	load two  ; acc<-2
+	NAND one  ; acc<-~(acc&mdr)
+	write     ; output<acc
+	NAND one  ; acc<-~(acc&mdr)
+	write     ; output<acc
+	stop      ; stop
+zero: 
+	.data 2 0 ; 2-byte location for constant zero
+one: 
+	.data 2 1 ; 2-byte location for constant one
+two: 
+	.data 2 2 ; 2-byte location for constant two
+res: 
+	.data 2 0 ; 2-byte location where result is stored

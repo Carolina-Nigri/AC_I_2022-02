@@ -1,0 +1,16 @@
+; Carolina Morais Nigri - 761400
+; Testar instrucao NOT
+
+Main: 
+	load zero ; acc<-0
+	NOT       ; acc<-~acc
+	write     ; output<-acc
+	NOT       ; acc<-~acc
+	write     ; output<acc
+	stop      ; stop
+zero: 
+	.data 2 0 ; 2-byte location for constant zero
+one: 
+	.data 2 1 ; 2-byte location for constant one
+res: 
+	.data 2 0 ; 2-byte location where result is stored
